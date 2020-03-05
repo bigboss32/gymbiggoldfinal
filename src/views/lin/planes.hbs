@@ -1,0 +1,268 @@
+<aside id="colorlib-hero" class="colorlib-degree-bg">
+	<div class="flexslider">
+		<ul class="slides">
+			<li style="background-image: url(images/planes.png);">
+				<div class="overlay"></div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
+							<div class="slider-text-inner text-center">
+								<h1>Administración planes</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</aside>
+
+
+<!--Modulo de usuarios-->
+<section id="breadcrumb">
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="index.html">Panel planes</a></li>
+			<li class="active">filtro de planes</li>
+		</ol>
+	</div>
+</section>
+
+<section id="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="list-group">
+					<a class="list-group-item active color-principal">
+						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Panel de administracion
+					</a>
+					<a href="/inicio" class="list-group-item"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> informacion gimnasio
+						<span class="badge"></span></a>
+					
+					<a href="/persona" class="list-group-item"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> clientes <span class="badge">340</span></a>
+					<a href="/rutina" class="list-group-item"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> rutinas <span class="badge">7</span></a>
+					<a href="/productos" class="list-group-item"><span class="glyphicon glyphicon-uno"
+							aria-hidden="true"></span> Productos <span class="badge">1200</span></a>
+					<a href="/ventas" class="list-group-item"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> ventas <span class="badge">2300</span></a>
+					<a href="/provedores" class="list-group-item"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> proovedores <span class="badge">25</span></a>
+					<a href="/planes" class="list-group-item"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> planes <span class="badge">7</span></a>
+				</div>
+			</div>
+
+			<div class="col-md-9">
+				<!-- Website Overview -->
+				<div class="panel panel-default">
+					<div class="panel-heading main-color-bg">
+						<h3 class="panel-title">Entrada de planes</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<input class="form-control" type="text" placeholder="Filtrar planes...">
+							</div>
+						</div>
+						<br>
+
+						<!--inicia aqui-->
+						<div class="container" id="advanced-search-form">
+
+							<form action="/planes" method="POST">
+								<h2>Registro de planes</h2>
+
+								<div class="form-group">
+									<label for="first-name">Id plan</label>
+									<input type="text" class="form-control" placeholder="id del plan" id="id_producto"
+										style="width:400px" name="ID_ELEMENT" autofocus>
+
+								</div>
+								<div class="form-group">
+									<label for="first-name">Nombre del plan</label>
+									<input type="text" class="form-control" placeholder="nombre plan" id="nomb_pro"
+										style="width:400px" name="NOMB_ELEMENT">
+								</div>
+
+								<div class="form-group">
+									<label for="number">precio</label>
+									<input type="text" class="form-control" placeholder="precio" id="precio"
+										style="width:400px" name="PRECI">
+
+
+									<!--  <div class="form-group">
+									<label for="first-name">FK </label>
+									<input type="text" class="form-control" placeholder="id del producto"
+										id="id_producto" style="width:400px" name="FK_ELEMENT" autofocus>
+								
+								</div> -->
+
+									<div class="form-group">
+										<label for="last-name">Duracion</label>
+										<input type="text" class="form-control" placeholder="duracion" id="categoria"
+											style="width:400px" name="DURACI">
+									</div>
+
+									<div class="form-group">
+                                    <label for="first-name">ESTADO</label>
+                                    <select class="form-control" id="ESTA" name="ESTA" style="width:400px">
+                                        <option value="ACTIVO">ACTIVO</option>
+                                        <option value="INACTIVO">INACTIVO</option>
+                                    </select>
+                                </div>
+
+									<div class="form-group">
+										<button type="submit" class="btn btn-info btn-lg btn-responsive"
+											id="botonguardarproducto">
+											guardar plan</button>
+									</div>
+
+							</form>
+						</div>
+
+						<div class="container d-flex">
+							<table class="table table-striped table-hover">
+
+								<!--thead es la cabeza de la tabla-->
+						</div>
+
+					</div>
+				</div>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	</div>
+	</div>
+</section>
+
+<section id="main">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<!-- Website Overview -->
+				<div class="panel panel-default">
+					<div class="panel-heading main-color-bg">
+						<h3 class="panel-title">PLANES REGISTRADOS EN LA BASE DE DATOS</h3>
+					</div>
+					<div class="panel-body">
+
+						<!--inicia aqui-->
+
+						<div class="row">
+
+
+
+							<div class="col-md-12">
+								<table class="table    table-bordered table table-hover">
+
+									<tr class="info">
+										<th scope="col">ID</th>
+										<th scope="col">NOMBRE</th>
+										<th scope="col">PRECIO</th>
+										<th scope="col">DURACION</th>
+										<th scope="col">ESTADO</th>
+										<th scope="col">ACTUALIZAR</th>
+										<th scope="col">ELIMINAR</th>
+									</tr>
+									{{#each dat}}
+
+									<tr>
+										<td>{{ID_ELEMENT}}</td>
+										<td>{{NOMB_ELEMENT}}</td>
+										<td>{{PRECI}}</td>
+										<td>{{DURACI}}</td>
+										<td>{{ESTA}}</td>
+										<td> <a href="/a_plan/{{ID_ELEMENT}}" class="btn btn-info">Actualizar </a></td>
+										<td><a href="/planes/{{ID_ELEMENT}}" class="btn btn-danger ">Eliminar </a></td>
+									</tr>
+
+									{{else}}
+									<div class="col-md-12 mx-auto">
+										<div class=" card card-body text-center ">
+											<H1>NO HAY PRODUCTOS EN LA LISTA</H1>
+										</div>
+									</div>
+
+									{{/each}}
+								</table>
+							</div>
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+				<br>
+
+
+
+
+
+			</div>
+		</div>
+		</table>
+	</div>
+	</div>
+	</div>
+
+	</div>
+	</div>
+	</div>
+</section>
+
+
+
+
+
+<!-- Modals -->
+
+<!-- Agregar página -->
+<div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form>
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Agregar Página</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label>Título de Página</label>
+						<input type="text" class="form-control" placeholder="Título de la página">
+					</div>
+					<div class="form-group">
+						<label>Mensaje de Página</label>
+						<textarea name="editor1" class="form-control" placeholder="Información de la página"></textarea>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> Publicado
+						</label>
+					</div>
+					<div class="form-group">
+						<label>Palabras Clave</label>
+						<input type="text" class="form-control" placeholder="Agregar algunas palabras...">
+					</div>
+					<div class="form-group">
+						<label>Meta Descripción</label>
+						<input type="text" class="form-control" placeholder="Agregar una metadescripción...">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+					<button type="submit" class="btn btn-primary">Guardar Cambios</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

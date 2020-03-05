@@ -1,0 +1,75 @@
+<aside id="colorlib-hero" class="colorlib-degree-bg">
+	<div class="flexslider">
+		<ul class="slides">
+			<li style="background-image: url(images/planes.png);">
+				<div class="overlay"></div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
+							<div class="slider-text-inner text-center">
+								<h1>Administración planes</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</aside>
+
+<section id="main">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<!-- Website Overview -->
+				<div class="panel panel-default">
+					<div class="panel-heading main-color-bg">
+						<h3 class="panel-title">PLANES</h3>
+					</div>
+					<div class="panel-body">
+
+
+						{{#each p}}
+						<div class="col-md-4">
+							<div class=" cart text-center">
+								<div class="card-body">
+									<h2 class=" card_titlle text-uppercase">
+										{{NOMB_ELEMENT}}
+
+
+									</h2>
+									<p class="m-2"> ${{PRECI}}</p>
+									<a href="" class=" btn btn-danger">ver plan</a>
+								</div>
+
+							</div>
+							<br>
+							<br>
+							<br>
+						</div>
+
+						{{/each}}
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<div class="container p-4">
+	<div class=" row">
+
+
+
+	</div>
+
+
+</div>
+<br>
+<br>

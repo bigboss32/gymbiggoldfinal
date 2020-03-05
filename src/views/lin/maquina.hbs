@@ -1,0 +1,225 @@
+<!--Texto de Presentacion-->
+<aside id="colorlib-hero" class="colorlib-degree-bg">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style="background-image: url(images/productos_fondo.jpg);">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h1>Administracion equipos</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+
+<!--Modulo de usuarios-->
+<section id="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="index.html">Panel de Control</a></li>
+            <li class="active">Usuarios</li>
+        </ol>
+    </div>
+</section>
+
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a class="list-group-item active color-principal">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Panel de Control
+                    </a>
+                    <a href="/inicio" class="list-group-item"><span class="glyphicon glyphicon-user"
+                            aria-hidden="true"></span> informacion gimnasio
+                        <span class="badge"></span></a>
+                    <a href="/empleados" class="list-group-item"><span class="glyphicon glyphicon-user"
+                            aria-hidden="true"></span> empleados <span class="badge">20</span></a>
+                    <a href="/clientes" class="list-group-item"><span class="glyphicon glyphicon-user"
+                            aria-hidden="true"></span> clientes <span class="badge">340</span></a>
+                    <a href="/rutina" class="list-group-item"><span class="glyphicon glyphicon-user"
+                            aria-hidden="true"></span> rutinas <span class="badge">7</span></a>
+                    <a href="/productos" class="list-group-item"><span class="glyphicon glyphicon-uno"
+                            aria-hidden="true"></span> Productos <span class="badge">1200</span></a>
+                    <a href="/ventas" class="list-group-item"><span class="glyphicon glyphicon-user"
+                            aria-hidden="true"></span> ventas <span class="badge">2300</span></a>
+                    <a href="/provedores" class="list-group-item"><span class="glyphicon glyphicon-user"
+                            aria-hidden="true"></span> proovedores <span class="badge">25</span></a>
+                    <a href="/planes" class="list-group-item"><span class="glyphicon glyphicon-user"
+                            aria-hidden="true"></span> planes <span class="badge">7</span></a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <!-- Website Overview -->
+                <div class="panel panel-default">
+                    <div class="panel-heading main-color-bg">
+                        <h3 class="panel-title">Entradas</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" placeholder="Filtrar usurios...">
+                            </div>
+                        </div>
+                        <br>
+
+                        <!--inicia aqui-->
+                        <div class="container" id="advanced-search-form">
+
+                            <form action="/maquina_guardar" method="POST">
+                                <h2>GESTION MAQUINARIA</h2>
+                                <div class="form-group">
+                                    <label for="first-name">NOMBRE MAQUINA</label>
+                                    <input type="text" class="form-control" placeholder="Nombre Maquina" id="NOMB_MAQUI"
+                                        style="width:400px" name="NOMB_MAQUI">
+                                </div>
+                                <div class="form-group">
+                                    <label for="first-name">ESTADO MAQUINA</label>
+                                    <select class="form-control" id="ESTA" name="ESTA" style="width:400px">
+                                        <option value="ACTIVO">ACTIVO</option>
+                                        <option value="INACTIVO">INACTIVO</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-info btn-lg btn-responsive"
+                                        id="botonguardarproducto">
+                                        guardar maquina</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="container d-flex">
+                            <table class="table table-striped table-hover">
+
+                                <!--thead es la cabeza de la tabla-->
+                        </div>
+
+                    </div>
+                </div>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="main">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <!-- Website Overview -->
+                <div class="panel panel-default">
+                    <div class="panel-heading main-color-bg">
+                        <h3 class="panel-title">maquinas registradas</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <!--inicia aqui-->
+
+                        <div class="row">
+
+
+
+                            <div class="col-md-12">
+                                <table class="table    table-bordered table table-hover">
+
+                                    <tr class="info">
+
+                                        <th scope="col">ID</th>
+                                        <th scope="col">MAQUINA</th>
+                                        <th scope="col">ESTADO</th>
+                                        <th scope="col">Actualizar</th>
+                                        <th scope="col">ELIMINAR</th>
+                                    </tr>
+                                    {{#each machine}}
+
+                                    <tr>
+                                        <td>{{ID_MAQUI}}</td>
+                                        <td>{{NOMB_MAQUI}}</td>
+                                        <td>{{ESTA}}</td>
+                                        <td> <a href="/amaquina/{{ID_MAQUI}}" class="btn btn-info">Actualizar </a>
+                                        </td>
+                                        <td> <a href="/maquina/{{ID_MAQUI}}" class="btn btn-info">ELIMINAR </a>
+                                        </td>
+                                    </tr>
+                                    {{else}}
+                                    <div class="col-md-12 mx-auto">
+                                        <div class=" card card-body text-center ">
+                                            <H1>NO HAY MAQUINAS EN LA LISTA</H1>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        </table>
+    </div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Modals -->
+
+<!-- Agregar página -->
+<div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Agregar Página</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Título de Página</label>
+                        <input type="text" class="form-control" placeholder="Título de la página">
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje de Página</label>
+                        <textarea name="editor1" class="form-control" placeholder="Información de la página"></textarea>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Publicado
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Palabras Clave</label>
+                        <input type="text" class="form-control" placeholder="Agregar algunas palabras...">
+                    </div>
+                    <div class="form-group">
+                        <label>Meta Descripción</label>
+                        <input type="text" class="form-control" placeholder="Agregar una metadescripción...">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

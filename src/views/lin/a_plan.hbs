@@ -1,0 +1,62 @@
+<aside id="colorlib-hero" class="colorlib-degree-bg">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style="background-image: url(images/productos_fondo.jpg);">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h1>Administración productos</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<div class="container" id="advanced-search-form">
+
+
+    <form action="/a_plan/{{pr.ID_ELEMENT}}" method="POST">
+        <h2>Registro de producto</h2>
+
+        <div class="form-group">
+            <label for="first-name">Nombre del producto</label>
+            <input type="text" value="{{pr.NOMB_ELEMENT}}" class="form-control" placeholder="nombre del producto"
+                id="nomb_pro" style="width:400px" name="NOMB_ELEMENT">
+        </div>
+
+        <div class="form-group">
+            <label for="number">precio</label>
+            <input type="text" class="form-control" value="{{pr.PRECI}}" placeholder="precio" id="precio"
+                style="width:400px" name="PRECI">
+
+
+            <div class="form-group">
+                <label for="last-name">duracion</label>
+                <input type="text" value="{{pr.DURACI}}" class="form-control" placeholder="categoria" id="categoria"
+                    style="width:400px" name="DURACI">
+            </div>
+
+            <div class="form-group">
+                <label for="first-name">ESTADO</label>
+                <select class="form-control" id="ESTA" name="ESTA" style="width:400px" value="{{pr.ESTA}}">
+                    <option value="ACTIVO">ACTIVO</option>
+                    <option value="INACTIVO">INACTIVO</option>
+                </select>
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-info btn-lg btn-responsive" id="botonguardarproducto">
+                    guardar producto</button>
+            </div>
+
+    </form>
+</div>
+
+</section>

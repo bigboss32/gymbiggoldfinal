@@ -1,0 +1,55 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!--FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<!-- Los iconos tipo Solid de Fontawesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	</script>
+	<!-- Nuestro css-->
+	<link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}">
+</head>
+
+<body>
+
+
+	<div class="modal-dialog text-center " >
+		<div class="col-sm8 main-section">
+			<div class="modal-content">
+				<div class="col-12 user-img">
+					<img src="static/img/User_Avatar_2.png">
+				</div>
+				<form action="/sigin" method="POST" class="col-12">
+					<div class="form-group " id="user-group">
+						<input type="text" name="USER" class="form-control" placeholder="Nombre de usuario">
+					</div>
+					<div class="form-group" id="contrasena-group">
+						<input type="password" name="CONTR" class="form-control" placeholder="Contraseña">
+					</div>
+					
+	<div  <class="form-group">
+		<button type="submit" class="btn btn-primary ">
+			<i class="fas fa-sign-in-alt" > </i> inico
+
+		</button>
+	</div>
+		
+				</form>
+				<div class="col-12 forgot"></div>
+				<a href="#"> <h2>recordar contraseña</h2></a> <a href="/signup"> <h2>registrarse por primera vez</h2> </a>
+
+
+
+				<!-- eL sutmit se pone en un botton para enviar todo-->
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/main.js"></script>
